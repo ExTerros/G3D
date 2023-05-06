@@ -11,6 +11,9 @@
     crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/f1cb767a46.js" crossorigin="anonymous"></script>
 
   <script src="js/app.js"></script>
   <link rel="stylesheet" href="css/style.css">
@@ -32,110 +35,267 @@
 
 </head>
 
-<body class="dark:bg-stone-200">
-  
-<nav class="bg-gray-50 border-gray-200 dark:bg-gray-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="index.html" class="flex items-center">
-      <img src="assets/logo.png" class="h-8 mr-3" alt="Flowbite Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">G3D</span>
-    </a>
-    <button data-collapse-toggle="navbar-default" type="button"
-      class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      aria-controls="navbar-default" aria-expanded="false">
-      <span class="sr-only">Ouvrir le Menu</span>
-      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd"
-          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-          clip-rule="evenodd"></path>
-      </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="font-medium flex flex-col items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+<body class="dark:bg-gray-900">
 
-      <li>
-          <a href="#"
-            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-            aria-current="page">Accueil</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Fumigation</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Désinsectisation</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Deratisation</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Désinfection</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-        </li>
-        <li>
-          <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </li>
-      </ul>
+  <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 z-30">
+    <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center">
+        <img src="assets/logo.png" class="h-8 mr-3" alt="G3D Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">G3D</span>
+      </a>
+      <button data-collapse-toggle="navbar-solid-bg" type="button"
+        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-solid-bg" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+        <ul
+          class="flex flex-col font-medium items-center mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700" id="nav-ul">
+          <li>
+            <a href="#Accueil"
+              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+              aria-current="page">Accueil</a>
+          </li>
+          <li>
+            <a href="#fumigation"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Fumigation</a>
+          </li>
+          <li>
+            <a href="#désinsectisation"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Désinsectisation</a>
+          </li>
+          <li>
+            <a href="#dératisation"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Dératisation</a>
+          </li>
+          <li>
+            <a href="#désinfection"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Désinfection</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li>
+          <li>
+            <button id="theme-toggle" type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+              <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="text-gray-600 body-font" id="Accueil">
+    <div class="">
+      <div class="flex flex-wrap w-full bg-gray-100 py-32 relative mb-4">
+
+        <div class="text-center relative z-10 w-full">
+          <h1 class="text-4xl text-white font-medium title-font mb-2">G3D Service</h1>
+          <p class="leading-relaxed text-gray-300 text-2xl">Expert de l'éradication total de tout type de nuisible</p>
+        </div>
+
+        <img alt="gallery" id="image-slider"
+          class="w-full object-cover h-full object-center block opacity-100 absolute inset-0"
+          src="assets/slider/deratisation-01.jpg">
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="text-gray-600 dark:text-gray-400 body-font">
+    <div class="container px-5 py-3 mx-auto">
+      <div class="text-center mb-12">
+        <div class="flex mt-6 justify-center">
+          <div class="w-96 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+        </div>
+      </div>
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6" id="TextAChanger"> <!-- TODO: Text a changer-->
+        <div class="p-4 md:w-1/4 flex flex-col text-center items-center">
+          <div
+            class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+            <i class="fa-solid fa-gear text-4xl"></i>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 dark:text-white text-lg title-font font-medium mb-3">Interventions</h2>
+            <p class="leading-relaxed text-base">Exclusivement effectuées uniquement par des techniciens habilités et
+              diplomes.</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 flex flex-col text-center items-center">
+          <div
+            class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+            <i class="fa-solid fa-book-open text-4xl"></i>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 dark:text-white text-lg title-font font-medium mb-3">Sécurité</h2>
+            <p class="leading-relaxed text-base"> Respect strict de la législation. Utilisation de produits agréés et
+              homologués. Stages périodiques de remise à jour sur les nouveaux produits, la sécurité, la réglementation
+              et la mutation des nuisibles.</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 flex flex-col text-center items-center">
+          <div
+            class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+            <i class="fa-solid fa-certificate text-4xl"></i>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 dark:text-white text-lg title-font font-medium mb-3">Agréments et certifications</h2>
+            <p class="leading-relaxed text-base">Agrément Fumifateur LHN16L0004
+              Agrément Phitosanitaire OF-0552-23787
+              Agrément Biocide 017582</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 flex flex-col text-center items-center">
+          <div
+            class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+            <i class="fa-solid fa-shield-halved text-4xl"></i>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-gray-900 dark:text-white text-lg title-font font-medium mb-3">Maitrise Professionelle</h2>
+            <p class="leading-relaxed text-base">Choix du traitement en tenant compte de la sécurité des personnes, des
+              animaux, des biens et de l'environnement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container px-5 py-3 mx-auto">
+    <div class="text-center mb-12">
+      <div class="flex mt-6 justify-center">
+        <div class="w-96 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+      </div>
     </div>
   </div>
-</nav>
 
-<section class="text-gray-600 body-font">
-  <div class="container px-5 py-10 mx-auto">
-    <div class="flex flex-col text-center w-full mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">G3D Service</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base dark:text-gray-600">Notre entreprise dite 3D (dératisation, désinsectisation et désinfection) est spécialiste dans la lutte et le traitement contre les insectes et toute sorte de nuisible. Nous intervenons pour les professionnels comme pour les particuliers pour tout problème de cafard, de punaise de lit, de guêpes et autres insectes ainsi que pour les rongeurs.</p>
-    </div>
-    <div class="flex flex-wrap">
-      <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-        <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Fumigation</h2>
-        <p class="leading-relaxed text-base mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo eum iste suscipit vero quibusdam pariatur, voluptatem itaque aliquam libero dicta impedit numquam in sunt quia rerum ex modi officiis.</p>
-        <a class="text-indigo-500 inline-flex items-center">En savoir plus
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
+  <section class="text-gray-600 body-font mt-10" id="fumigation">
+    <div class="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
+      <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-100">Fumigation
+        </h1>
+        <p class="mb-8 leading-relaxed dark:text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit sint rerum repellendus sit, excepturi distinctio aperiam accusantium atque adipisci eveniet labore, voluptatum dolor praesentium alias placeat laudantium eius blanditiis. Quos!</p>
       </div>
-      <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-        <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Désinsectisation</h2>
-        <p class="leading-relaxed text-base mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt temporibus esse porro quod dolor praesentium molestias vitae veniam voluptatibus excepturi similique, harum mollitia iusto totam illum nihil recusandae dolorem atque!</p>
-        <a class="text-indigo-500 inline-flex items-center">En savoir plus
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-        <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Dératisation</h2>
-        <p class="leading-relaxed text-base mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor modi earum consequatur vel accusantium porro animi maxime quaerat aut, voluptate facere unde similique, repellat laboriosam ea voluptates nisi repudiandae incidunt?</p>
-        <a class="text-indigo-500 inline-flex items-center">En savoir plus
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-        <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Désinfection</h2>
-        <p class="leading-relaxed text-base mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quae optio aperiam laborum explicabo aliquid rerum similique? Natus similique aspernatur minus est quibusdam sit corrupti. Voluptatibus officiis ut facilis vero!</p>
-        <a class="text-indigo-500 inline-flex items-center">En savoir plus
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero" src="assets/img/nebuliseur-01.jpg">
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="text-gray-600 body-font" id="désinsectisation">
+    <div class="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <img class="object-cover object-center rounded" alt="hero" src="assets/img/cafards-01.jpg">
+      </div>
+      <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-100">Désinsectisation
+        </h1>
+        <p class="mb-8 leading-relaxed dark:text-gray-500">Blattes, cafards, puces, punaises de lit, mites, moustiques, fourmis, etc...<br>Traitement par pulvérisation, nébuilisation, fumigation, pose de gel insecticide  et autres appats en fonction de l'espèce à traiter</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-600 body-font" id="dératisation">
+    <div class="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
+      <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-100">Dératisation</h1>
+        <p class="mb-8 leading-relaxed dark:text-gray-500">Rats, souris (transmetteurs de virus, germes, bactéries, dégradation des constructions, des câbles électriques, des boiseries, des yêtements, odeurs d'urine, pelages...) etc...<br>Mise en place de divers poisons, appâts, répulsifs boitiers sécurisés en PVC fermant à clef ou système mécanique de pulvérisation, répulsif à base d'huiles essentielles, rotation de molécules et compte rendu des interventions par e-mails.</p>
+      </div>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero" src="assets/img/souris-01.jpg">
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-600 body-font" id="désinfection">
+    <div class="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <img class="object-cover object-center rounded" alt="hero" src="assets/img/fourmis-01.jpg">
+      </div>
+      <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-100">Désinfection
+        </h1>
+        <p class="mb-8 leading-relaxed dark:text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam nesciunt, et suscipit cum vitae ullam voluptatibus ducimus in quidem nemo nulla aut, dignissimos illum, recusandae velit. Animi modi ut aspernatur!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pt-10">
+    <div class="container px-5 mx-auto">
+      <div class="text-center mb-12">
+        <div class="flex justify-center">
+          <div class="w-96 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto w-full border-gray-200 bg-gray-50 dark:bg-gray-600 mt-16">
+      <div class="flex justify-evenly gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">G3D SERVICE</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <li class="mb-4">
+              <a href="#fumigation" class=" hover:underline">Fumigation</a>
+            </li>
+            <li class="mb-4">
+              <a href="#désinsectisation" class="hover:underline">Désinsectisation</a>
+            </li>
+            <li class="mb-4">
+              <a href="#dératisation" class="hover:underline">Dératisation</a>
+            </li>
+            <li class="mb-4">
+              <a href="#désinfection" class="hover:underline">Désinfection</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Nous contacter</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <li class="mb-4">
+              <a href="https://goo.gl/maps/HVopXmLCcgZTdzAd9" class="hover:underline">16 rue de Roanne 76500 - Elbeuf</a>
+            </li>
+            <li class="mb-4">
+              <a href="tel:+33659995723" class="hover:underline">06 58 99 57 23</a>
+            </li>
+            <li class="mb-4">
+              <a href="mailto:g3dservice@gmail.com" class="hover:underline">g3dservice@gmail.com</a>
+            </li>
+            <li class="mb-4">
+              <a href="#" class="hover:underline">Devis / informations</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700">
+        <p class="text-sm text-gray-500 dark:text-gray-300 sm:text-center text-center">Copyright © 2023<a
+            href="index.html"> G3D Service</a>. Entreprise de dératisation, désinsectisation & désinfection.
+          </span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+
+
+  </script>
 
 </body>
 
