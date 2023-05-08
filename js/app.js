@@ -66,11 +66,11 @@ window.onload = () => {
     gsap.set(elements, { opacity: 0, x: -100 });
     gsap.to(elements, { duration: 1, opacity: 1, x: 0, stagger: 0.2 });
 
-    const fumigation = document.querySelectorAll("#fumigation");
-    const dératisation = document.querySelectorAll("#dératisation");
+    const fumigation = document.querySelectorAll("#fumigation-transi");
+    const dératisation = document.querySelectorAll("#dératisation-transi");
 
-    gsap.set(fumigation, { opacity: 0, x: 300 });
-    gsap.set(dératisation, { opacity: 0, x: 300 });
+    gsap.set(fumigation, { opacity: 0, x: 150 });
+    gsap.set(dératisation, { opacity: 0, x: 150 });
 
     gsap.to(fumigation, {
         duration: 1,
@@ -79,7 +79,7 @@ window.onload = () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: fumigation,
-            start: "top 80%",
+            start: "top 60%",
             end: "bottom 20%",
             toggleActions: "play none none reverse",
         },
@@ -92,17 +92,17 @@ window.onload = () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: dératisation,
-            start: "top 80%",
+            start: "top 60%",
             end: "bottom 20%",
             toggleActions: "play none none reverse",
         },
     });
 
-    const désinsectisation = document.querySelectorAll("#désinsectisation");
-    const désinfection = document.querySelectorAll("#désinfection");
+    const désinsectisation = document.querySelectorAll("#désinsectisation-transi");
+    const désinfection = document.querySelectorAll("#désinfection-transi");
 
-    gsap.set(désinsectisation, { opacity: 0, x: -300 });
-    gsap.set(désinfection, { opacity: 0, x: -300 });
+    gsap.set(désinsectisation, { opacity: 0, x: -150 });
+    gsap.set(désinfection, { opacity: 0, x: -150 });
 
     gsap.to(désinsectisation, {
         duration: 1,
@@ -111,7 +111,7 @@ window.onload = () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: désinsectisation,
-            start: "top 80%",
+            start: "top 60%",
             end: "bottom 20%",
             toggleActions: "play none none reverse",
         },
@@ -124,7 +124,25 @@ window.onload = () => {
         stagger: 0.2,
         scrollTrigger: {
             trigger: désinfection,
-            start: "top 80%",
+            start: "top 60%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+        },
+    });
+
+
+    const contact = document.querySelectorAll("#form-contact");
+
+    gsap.set(contact, { opacity: 0, x: 150 });
+
+    gsap.to(contact, {
+        duration: 1,
+        opacity: 1,
+        x: 0,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: contact,
+            start: "top 60%",
             end: "bottom 20%",
             toggleActions: "play none none reverse",
         },

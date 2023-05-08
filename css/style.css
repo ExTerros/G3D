@@ -7,6 +7,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+  }
+
 #image-slider {
     transition: filter 0.5s ease-in-out;
     filter: blur(0px);
@@ -15,3 +19,25 @@ html {
 #image-slider.fade-out {
     filter: blur(10px);
 }
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animate-scroll {
+    animation-name: scroll;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    display: inline-flex;
+    white-space: nowrap;
+  }
+  
+  .animate-scroll > * {
+    flex-shrink: 0;
+  }
