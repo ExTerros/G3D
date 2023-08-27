@@ -2,7 +2,7 @@
 if (isset($_POST['contactForm'])) {
   if (!empty($_POST['email']) and !empty($_POST['message'])) {
     $header = "MIME-Version: 1.0\r\n";
-    $header .= 'From:"Site G3D"<nicolasdu76250@live.fr>' . "\n";
+    $header .= 'From:"Site G3D Fumigation"<nicolasdu76250@live.fr>' . "\n";
     $header .= 'Content-Type:text/html; charset="uft-8"' . "\n";
     $header .= 'Content-Transfer-Encoding: 8bit';
 
@@ -18,7 +18,7 @@ if (isset($_POST['contactForm'])) {
 		</html>
 		';
 
-    mail("exterrosdu76000@gmail.com", "CONTACT - G3D.com", $message, $header);
+    mail("g3dservice@gmail.com", "CONTACT - G3D.com", $message, $header);
     $msg = "Votre message a bien été envoyé !";
   } else {
     $error = "Tous les champs doivent être complétés !";
@@ -33,7 +33,7 @@ if (isset($_POST['contactForm'])) {
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>G3D Contact</title>
+  <title>G3D Fumigation Contact</title>
   <link rel="icon" type="image/png" href="/assets/logo.png" />
 
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
@@ -69,7 +69,7 @@ if (isset($_POST['contactForm'])) {
     <div class="flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center">
         <img src="assets/logo.png" class="h-8 mr-3" alt="G3D Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">G3D</span>
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">G3D Fumigation</span>
       </a>
       <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
@@ -116,7 +116,7 @@ if (isset($_POST['contactForm'])) {
 
   <section class="text-gray-600 body-font relative border-gray-300 border-t-4">
     <div class="absolute inset-0 bg-gray-300">
-      <iframe class="dark:grayscale " width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.40287206329!2d1.0064066!3d49.287710999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e11ed7b3dbcef1%3A0xec160e0f8abe55b9!2s16%20Rue%20de%20Roanne%2C%2076500%20Elbeuf!5e0!3m2!1sfr!2sfr!4v1683483546932!5m2!1sfr!2sfr"></iframe>
+      <iframe class="dark:grayscale " width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.40287206329!2d1.0064066!3d49.287710999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e11ed7b3dbcef1%3A0xec160e0f8abe55b9!2s16%20Rue%20de%20Roanne%2C%2076500%20Elbeuf!5e0!3m2!1sfr!2sfr!4v1683483546932!5m2!1sfr!2sfrhttps://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.2712808398496!2d1.0071238999999998!3d49.290203999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e11ed819269d5b%3A0x4b4a66f866b9bd64!2s16%20Rue%20Gr%C3%A9mont%2C%2076500%20Elbeuf!5e0!3m2!1sfr!2sfr!4v1693093643587!5m2!1sfr!2sfr"></iframe>
     </div>
     <form action="" method="post">
       <div class="container px-5 py-24 mx-auto flex opacity-0" id="form-contact">
@@ -162,7 +162,7 @@ if (isset($_POST['contactForm'])) {
     <div class="mx-auto w-full border-gray-200 bg-gray-50 dark:bg-gray-600 mt-0">
       <div class="flex justify-around gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         <div>
-          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">G3D SERVICE</h2>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">G3D FUMIGATION</h2>
           <ul class="text-gray-500 dark:text-gray-400 font-medium">
             <li class="mb-4">
               <a href="index.html#fumigation" class=" hover:underline">Fumigation</a>
@@ -182,10 +182,10 @@ if (isset($_POST['contactForm'])) {
           <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Nous contacter</h2>
           <ul class="text-gray-500 dark:text-gray-400 font-medium">
             <li class="mb-4">
-              <a href="https://goo.gl/maps/HVopXmLCcgZTdzAd9" class="hover:underline">16 rue de Roanne 76500 - Elbeuf</a>
+              <a href="https://goo.gl/maps/HVopXmLCcgZTdzAd9" class="hover:underline">16 rue Grémont 76500 - Elbeuf</a>
             </li>
             <li class="mb-4">
-              <a href="tel:+33659995723" class="hover:underline">06 58 99 57 23</a>
+              <a href="tel:+33659995723" class="hover:underline">06 83 89 24 81</a>
             </li>
             <li class="mb-4">
               <a href="mailto:g3dservice@gmail.com" class="hover:underline">g3dservice@gmail.com</a>
@@ -197,7 +197,7 @@ if (isset($_POST['contactForm'])) {
         </div>
       </div>
       <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700">
-        <p class="text-sm text-gray-500 dark:text-gray-300 sm:text-center text-center">Copyright © 2023<a href="index.html"> G3D Service</a>. Entreprise de dératisation, désinsectisation & désinfection.
+        <p class="text-sm text-gray-500 dark:text-gray-300 sm:text-center text-center">Copyright © 2023<a href="index.html">G3D Fumigation</a>. Entreprise de dératisation, désinsectisation & désinfection.
           </span>
       </div>
     </div>
