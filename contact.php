@@ -2,7 +2,7 @@
 if (isset($_POST['contactForm'])) {
   if (!empty($_POST['email']) and !empty($_POST['message'])) {
     $header = "MIME-Version: 1.0\r\n";
-    $header .= 'From:"Site G3D Fumigation"<nicolasdu76250@live.fr>' . "\n";
+    $header .= 'From:"Site G3D Fumigation"<' . $_POST['email'] . '>' . "\n";
     $header .= 'Content-Type:text/html; charset="uft-8"' . "\n";
     $header .= 'Content-Transfer-Encoding: 8bit';
 
