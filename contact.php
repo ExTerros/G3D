@@ -2,7 +2,7 @@
 if (isset($_POST['contactForm'])) {
   if (!empty($_POST['email']) and !empty($_POST['message'])) {
     $header = "MIME-Version: 1.0\r\n";
-    $header .= 'From:"Site G3D Fumigation"<' . $_POST['email'] . '>' . "\n";
+    $header .= 'From:"Formulaire de contact G3D Fumigation"<g3dservice@gmail.com>' . "\n";
     $header .= 'Content-Type:text/html; charset="uft-8"' . "\n";
     $header .= 'Content-Transfer-Encoding: 8bit';
 
@@ -67,7 +67,7 @@ if (isset($_POST['contactForm'])) {
 
   <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 w-full z-30">
     <div class="flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center">
+      <a href="./index.html" class="flex items-center">
         <img src="assets/logo.png" class="h-8 mr-3" alt="G3D Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">G3D Fumigation</span>
       </a>
